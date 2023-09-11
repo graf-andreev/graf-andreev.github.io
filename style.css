@@ -4714,20 +4714,6 @@ p.component-products__carousel__item__details__text {
     margin-right: 8px;
 }
 
-.Layout-Main-Content-Block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.component-header {
-    position: fixed;
-    width: 100%;
-    height: 70px;
-    background-color: #F2F4F9;
-    z-index: 1000;
-}
-
 @media screen and (max-width: 720px) {
     .component-header {
         position: unset;
@@ -4736,12 +4722,6 @@ p.component-products__carousel__item__details__text {
     }
 }
 
-.component-header .Content-Block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
 
 @media screen and (max-width: 1300px) {
     .component-header .Content-Block {
@@ -4861,18 +4841,6 @@ p.component-products__carousel__item__details__text {
     font-size: calc((30 * 100vw) / 720);
     line-height: calc((36 * 100vw) / 720);
     color: #7a8091;
-}
-
-.subnav {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    width: 200%;
-    height: calc((150 * 100vw) / 720);
-    align-items: center;
-    background-color: #fafbfd;
-    z-index: 1000;
-    transform: translateX(0);
 }
 
 @media screen and (max-width: 720px) {
