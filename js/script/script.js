@@ -22,6 +22,33 @@ const mobileMenuClick = document.querySelectorAll('.mobile-menu__item-click');
 const popupCloseButton = document.querySelector('.CreditLine_popupButton');
 const creditLinePopup = document.querySelector('.CreditLine_popupOverlay');
 const creditInfoButton = document.querySelector('.CreditLine_infoButton');
+const rangeInput = document.querySelector('#input');
+
+$(document).ready(function () {
+    $('.component-products__carousel').slick({
+        dots: true,
+        arrows: false,
+        centerMode: true,
+        infinite: false,
+        centerPadding: `0vw`,
+        slidesToShow: 1,
+        variableWidth: true,
+        speed: 400,
+        initialSlide: 0,
+    });
+
+    $('.sign-up-steps-mobile__carousel').slick({
+        dots: true,
+        arrows: false,
+        centerMode: true,
+        infinite: false,
+        centerPadding: `0vw`,
+        slidesToShow: 1,
+        variableWidth: true,
+        speed: 400,
+        touchThreshold: 30,
+    });
+});
 
 creditInfoButton.addEventListener('click', function (){
     creditLinePopup.style.display = 'block'
@@ -81,12 +108,13 @@ function hideMobileStepsCarousel() {
 }
 
 closeMobileStepsCarousel.forEach(item => item.addEventListener('click', hideMobileStepsCarousel));
-function showMobileStepsCarousel() {
+function showMobileStepsCarousel(e) {
+    $('.sign-up-steps-mobile__carousel').slick('slickGoTo', e.target.getAttribute('aria-valuetext'));
     mobileStepsContainer.style.display = 'none';
     mobileStepsCarousel.style.display = 'block'
 }
 
-mobileSteps.forEach(item => item.addEventListener('click', showMobileStepsCarousel));
+mobileSteps.forEach(item => item.addEventListener('click', (e) => showMobileStepsCarousel(e)));
 function showProductsMobile(e) {
     if (e.target.innerText === 'Подробнее') {
         e.target.parentNode.parentNode.classList.add('component-products__carousel__item_opened');
@@ -200,33 +228,6 @@ if (window.innerWidth > 1080) {
     itemsMobile.forEach(item => item.addEventListener('click', faqMobile));
 }
 
-$(document).ready(function () {
-    $('.component-products__carousel').slick({
-        dots: true,
-        arrows: false,
-        centerMode: true,
-        infinite: false,
-        centerPadding: `0vw`,
-        slidesToShow: 1,
-        variableWidth: true,
-        speed: 400,
-        initialSlide: 0,
-    });
-
-    $('.sign-up-steps-mobile__carousel').slick({
-        dots: true,
-        arrows: false,
-        centerMode: true,
-        infinite: false,
-        centerPadding: `0vw`,
-        slidesToShow: 1,
-        variableWidth: true,
-        speed: 400,
-        touchThreshold: 30,
-        goTo: 3
-    });
-});
-
 async function postData(url = "", data = {}) {
     const response = await fetch(url, {
         method: "POST",
@@ -252,6 +253,8 @@ phoneButton.addEventListener('click', function (){
 
 var valueBubble = '<output class="rangeslider__value-bubble" />';
 
+document.querySelector('#input')
+
 function updateValueBubble(pos, value, context) {
     pos = pos || context.position;
     value = value || context.value;
@@ -259,6 +262,18 @@ function updateValueBubble(pos, value, context) {
     var tempPosition = pos + context.grabPos;
     var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
 
+    if (context.value === 15000 || context.value === 300000) {
+        $valueBubble[0].style.display = 'none'
+    } else {
+        $valueBubble[0].style.display = 'block'
+    }
+    // console.log(context)
+    // if (context.value >= 30000) {
+    //     context.step = 30000
+    // } else {
+    //     context.step = 15000
+    // }
+    console.log(context)
     if ($valueBubble.length) {
         $valueBubble[0].style.left = Math.ceil(position) + 'px';
         $valueBubble[0].innerHTML = value;
@@ -267,6 +282,7 @@ function updateValueBubble(pos, value, context) {
 
 $('input[type="range"]').rangeslider({
     polyfill: false,
+    step: [15000, 30000, 60000, 90000, 120000, 150000, 180000, 210000, 240000, 270000, 300000],
     onInit: function() {
         this.$range.append($(valueBubble));
         updateValueBubble(null, null, this);
@@ -274,6 +290,7 @@ $('input[type="range"]').rangeslider({
     onSlide: function(pos, value) {
         updateValueBubble(pos, value, this);
         if (value === 15000) {
+
             rangeStart.classList.add('Range_edgePoint_selected');
         } else {
             rangeStart.classList.remove('Range_edgePoint_selected');

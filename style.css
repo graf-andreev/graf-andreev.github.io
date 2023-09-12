@@ -2677,6 +2677,7 @@ p.component-products__carousel__item__details__text {
 
 .component-sign-up-steps__content-block__item.slick-current{
     transform: scale(1) !important;
+    margin: 0 -15px;
 }
 
 .sign-up-steps-mobile__tabs__hint__text {
