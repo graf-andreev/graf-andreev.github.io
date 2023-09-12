@@ -5981,3 +5981,71 @@ p.component-products__carousel__item__details__text {
     display: none;
 }
 
+.component-sign-up-steps.who-can-get{
+    padding-top: 0;
+}
+
+.who-can-get-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 45px;
+    margin-bottom: 100px;
+}
+
+.who-can-get-item{
+    width: 30%;
+    max-width: 360px;
+    padding: 26px 30px;
+    border-radius: 10px;
+    background: #E3E7F1;
+    font-family: Lato, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.who-can-get-item img{
+    margin-bottom: 15px;
+}
+
+.who-can-get-header{
+    color: #1C2A40;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 9px;
+}
+
+.who-can-get-text{
+    color: #1C2A40;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@media (max-width: 720px){
+    .component-sign-up-steps.who-can-get {
+        min-height: auto;
+        display: block;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .who-can-get-wrapper{
+        flex-direction: column;
+        gap: 10px 0;
+    }
+    .who-can-get-item{
+        width: 100%;
+        max-width: fit-content;
+        flex-direction: row;
+    }
+    .who-can-get-header, .who-can-get-text{
+        text-align: left;
+    }
+    .who-inner-wrapper{
+        margin-left: 15px;
+    }
+}
