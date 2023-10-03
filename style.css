@@ -580,6 +580,7 @@ button:focus {
 
 .Button_status_new-pink a {
     font-family: "Lato", sans-serif;
+    font-weight: 700;
     font-size: 18px;
     color: #fdfdfd;
 }
@@ -638,9 +639,6 @@ button:focus {
 @media (max-width: 720px) {
     .Advantages_section {
         padding: 0 24px;
-    }
-    .Button_status_new-pink{
-        display: none;
     }
     .button_header_desc{
         display: none;
@@ -3244,6 +3242,7 @@ p.component-products__carousel__item__details__text {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 35px;
 }
 
 @media (max-width: 1080px) {
@@ -5669,7 +5668,9 @@ p.component-products__carousel__item__details__text {
     .CreditLine_section {
         padding: 60px 74px 70px;
     }
-
+    .Button_status_new-pink{
+        display: none;
+    }
     .CreditLine_container {
         margin-top: 60px;
         margin-bottom: 70px;
@@ -6047,5 +6048,69 @@ p.component-products__carousel__item__details__text {
     }
     .who-inner-wrapper{
         margin-left: 15px;
+    }
+}
+
+.show-more{
+    padding: 51px 0;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.show-more__header{
+    color: #1C2A40;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.show-more__text,
+.show-more__hidden-text{
+    color: #1C2A40;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.show-more__hidden-text{
+    display: none;
+}
+
+.show-more__button{
+    border-radius: 16px;
+    border: 1px solid #1C2A40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 32px;
+    cursor: pointer;
+    margin: 20px auto 0;
+    font-size: 20px;
+    padding-top: 3px;
+    transition: .3s;
+}
+
+.show-more__button:hover{
+    background: #E3E7F1;
+}
+
+@media screen and (max-width: 850px){
+    .show-more{
+        padding: 20px 30px 14px 30px;
+    }
+    .show-more__header{
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+    .show-more__text,
+    .show-more__hidden-text{
+        font-size: 15px;
+    }
+    .show-more__button{
+        width: 100%;
+        margin-bottom: 15px;
     }
 }

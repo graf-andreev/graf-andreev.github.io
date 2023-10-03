@@ -23,6 +23,8 @@ const popupCloseButton = document.querySelector('.CreditLine_popupButton');
 const creditLinePopup = document.querySelector('.CreditLine_popupOverlay');
 const creditInfoButton = document.querySelector('.CreditLine_infoButton');
 const rangeInput = document.querySelector('#input');
+const showMoreButton = document.querySelector('.show-more__button');
+const hiddenText = document.querySelector('.show-more__hidden-text');
 
 $(document).ready(function () {
     $('.component-products__carousel').slick({
@@ -50,6 +52,10 @@ $(document).ready(function () {
     });
 });
 
+showMoreButton.addEventListener('click', function () {
+    hiddenText.style.display = 'block';
+    this.style.display = 'none';
+})
 creditInfoButton.addEventListener('click', function (){
     creditLinePopup.style.display = 'block'
 });
