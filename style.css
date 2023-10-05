@@ -384,43 +384,37 @@ h5 {
 
 @font-face {
     font-family: Lato;
-    src: local('Roboto'), url(/fonts/Lato-Black.ttf);
+    src: url(/fonts/Lato-Black.ttf);
     font-weight: 900;
-    font-display: swap;
 }
 
 @font-face {
     font-family: Lato;
-    src: local('Roboto'), url(/fonts/Lato-Bold.ttf);
+    src: url(/fonts/Lato-Bold.ttf);
     font-weight: 800;
-    font-display: swap;
 }
 
 @font-face {
     font-family: Lato;
-    src: local('Roboto'), url(/fonts/Lato-Heavy.ttf);
+    src: url(/fonts/Lato-Heavy.ttf);
     font-weight: 700;
-    font-display: swap;
 }
 
 @font-face {
     font-family: Lato;
-    src: local('Roboto'), url(/fonts/Lato-Regular.ttf);
+    src: url(/fonts/Lato-Regular.ttf);
     font-weight: 500;
-    font-display: swap;
 }
 
 @font-face {
     font-family: Lato;
-    src: local('Roboto'), url(/fonts/Lato-Light.ttf);
+    src: url(/fonts/Lato-Light.ttf);
     font-weight: 300;
-    font-display: swap;
 }
 
 @font-face {
     font-family: Flow;
-    src: local('Roboto'), url(/fonts/Flow-Regular.ttf);
-    font-display: swap;
+    src: url(/fonts/Flow-Regular.ttf);
 }
 
 html {
