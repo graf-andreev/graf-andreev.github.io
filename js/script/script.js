@@ -52,10 +52,12 @@ $(document).ready(function () {
     });
 });
 
-showMoreButton.addEventListener('click', function () {
-    hiddenText.style.display = 'block';
-    this.style.display = 'none';
-})
+if (showMoreButton) {
+    showMoreButton.addEventListener('click', function () {
+        hiddenText.style.display = 'block';
+        this.style.display = 'none';
+    })
+}
 creditInfoButton.addEventListener('click', function (){
     creditLinePopup.style.display = 'block'
 });
